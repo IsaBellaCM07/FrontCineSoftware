@@ -1,10 +1,21 @@
-/* Header.css */
+/* HeaderStyle.css */
 header {
     text-align: center;
+    position: sticky;
     background-color: white;
     color: darkred;
-    padding: 10px;
 
+}
+
+#opciones {
+    padding: 0;
+    margin-top: 0;
+}
+
+#usuario {
+    top: 0;
+    background-color: lightgray;
+    padding: 25px;
 }
 
 h1{
@@ -15,7 +26,8 @@ h1{
 
 ul {
     list-style: none;
-    padding: 0;
+    padding: 25px 0 0;
+    margin-top: 0;
     display: flex;
     justify-content: center;
 }
@@ -32,7 +44,7 @@ ul {
     background-color: #ADD8E6;
 }
 
-.square-list-item.active {
+.square-list-item:active {
     background-color: #ADD8E6;
     border: 1px solid #ADD8E6;
     font-weight: bold;
@@ -63,6 +75,7 @@ hr{
     top: 10px;
     right: 10px;
     display: flex;
+    padding: 5px;
     align-items: center;
 }
 
@@ -75,7 +88,7 @@ hr{
     background-color: #ADD8E6;
     border-color: #ADD8E6;
     border-radius: 30px;
-
+    padding: 5px;
 }
 
 
