@@ -1,17 +1,34 @@
-import React from 'react';
-import './App.css';
+import React, {lazy, Suspense} from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
-import {BrowserRouter} from "react-router-dom";
-import Footer from "./components/Footer";
+import Footer from './components/Footer';
+
+/*
+Cuando utilizas React.lazy para cargar un
+componente dinámicamente, ese
+componente y sus estilos se cargan de forma independiente y se
+mantienen aislados del resto de la aplicación*/
+const LazyLogin = lazy(() => import('./components/Login'));
 
 function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <Header />
+                {/* Renderiza el componente Header en la parte superior de la aplicación */}
+                <Header/>
+
+                {/* Crea un contenedor para el contenido principal */}
                 <div className="container">
-                    /*Aqui va todo el cuerpo de la app*/
+                    <Routes>
+                        {/* Define una ruta para "/iniciar-sesion" */}
+                        <Route
+                            path="/iniciar-sesion"
+                            element={<LazyLogin/>}
+                        />
+                    </Routes>
                 </div>
+
+                {/* Renderiza el componente Footer en la parte inferior de la aplicación */}
                 <Footer/>
             </BrowserRouter>
         </div>
