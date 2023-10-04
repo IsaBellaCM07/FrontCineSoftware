@@ -1,6 +1,6 @@
 // Header.js
 import React from 'react';
-import {useLocation} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import '../styles/HeaderStyle.css';
 
 function Header() {
@@ -12,7 +12,7 @@ function Header() {
     }
 
     return (
-        <div>
+        <div className="header">
             <div>
                 <header id="usuario">
                     <div className="user-links">
@@ -23,7 +23,7 @@ function Header() {
             </div>
             <div>
                 <header id="opciones">
-                    <h1>CINECITO</h1>
+                    <Link to="/" className="link"><h1>CINECITO</h1></Link>
                     <nav>
                         <ul>
                             <li className="square-list-item"><a> CARTELERA</a></li>

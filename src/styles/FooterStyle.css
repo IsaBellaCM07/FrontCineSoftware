@@ -1,0 +1,29 @@
+/* FooterStyle.css */
+
+.footer p {
+    text-align: center;
+}
+
+.footer footer{
+    background-color: lightgray;
+    bottom: 0;
+    padding: 15px;
+    color: darkred;
+}
+
+.footer footer h2 {
+    float: left; /* Flotar a la izquierda */
+    font-family: 'Sofia', cursive; /* Fuente personalizada */
+    margin-top: 9px;
+    margin-left: 5px;
+}
+
+.footer .link {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.footer .link:active{
+    text-decoration: inherit;
+    color: inherit;
+}

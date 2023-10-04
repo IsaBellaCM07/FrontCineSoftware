@@ -2,6 +2,7 @@ import React, {lazy, Suspense} from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import PaginaInicio from "./components/PaginaInicio";
 
 /*
 React.lazy es para cargar un
@@ -21,6 +22,7 @@ function App() {
                 <div className="container">
                     <Routes>
                         {/* Define una ruta para "/iniciar-sesion" */}
+                        <Route exact path="/" element={<PaginaInicio/>}/>
                         <Route
                             path="/iniciar-sesion"
                             element={<LazyLogin/>}
