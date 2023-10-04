@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 /*
-Cuando utilizas React.lazy para cargar un
+React.lazy es para cargar un
 componente dinámicamente, ese
 componente y sus estilos se cargan de forma independiente y se
 mantienen aislados del resto de la aplicación*/
