@@ -1,14 +1,20 @@
 // Header.js
-import React from 'react';
+import React, {useState} from 'react';
 import {Link, useLocation} from 'react-router-dom';
+import Login from "./Login"
 import '../styles/HeaderStyle.css';
 
 function Header() {
 
-    const location = useLocation();
 
-    if(location.pathname==="/iniciar-sesion"){
-        return null;
+    const [modalLogin, setModalLogin] = useState(false);
+
+    const abrirModal = () => {
+        setModalLogin(true);
+    }
+
+    const cerrarModal = () => {
+        setModalLogin(false);
     }
 
     return (
@@ -16,8 +22,9 @@ function Header() {
             <div>
                 <header id="usuario">
                     <div className="user-links">
-                        <a href="/iniciar-sesion">Iniciar Sesión</a>
+                        <button onClick={modalLogin ? cerrarModal : abrirModal} className="btn-login">Iniciar Sesión</button>
                         <a href="/crear-cuenta">Crear cuenta</a>
+                        {modalLogin && <Login/>}
                     </div>
                 </header>
             </div>
@@ -26,7 +33,7 @@ function Header() {
                     <Link to="/" className="link"><h1>CINECITO</h1></Link>
                     <nav>
                         <ul>
-                            <li className="square-list-item"><a> CARTELERA</a></li>
+                            <li className="square-list-item"><a href="/cartelera"> CARTELERA</a></li>
                             <li className="square-list-item"><a>TEATROS</a></li>
                             <li className="square-list-item"><a>CONFITERÍA</a></li>
                             <li className="square-list-item"><a>PROMOCIONES</a></li>

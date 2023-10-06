@@ -5,7 +5,7 @@ const PELICULAS_URL = "http://localhost:8080/catalogoP";
 class PeliculaService{
 
     getAllPeliculas(){
-        return axios.get(PELICULAS_URL);
+        return axios.get(PELICULAS_URL + "/listar");
     }
 
     createPelicula(pelicula){

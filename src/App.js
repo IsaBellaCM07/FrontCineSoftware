@@ -3,6 +3,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PaginaInicio from "./components/PaginaInicio";
+import PeliculasAdmin from "./components/PeliculasAdmin";
+import './App.css';
 
 /*
 React.lazy es para cargar un
@@ -27,6 +29,7 @@ function App() {
                             path="/iniciar-sesion"
                             element={<LazyLogin/>}
                         />
+                        <Route path="/cartelera" element={<PeliculasAdmin/>}/>
                     </Routes>
                 </div>
 

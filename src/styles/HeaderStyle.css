@@ -3,7 +3,9 @@
 /* Estilos generales del encabezado */
 .header header{
     text-align: center; /* Centra el contenido de los encabezados */
-    position: sticky; /* Hace que el encabezado se mantenga fijo en la parte superior */
+    position: fixed;/* Hace que el encabezado se mantenga fijo en la parte superior */
+    top: 0;
+    width: 100vw;
     background-color: white; /* Fondo blanco */
     color: darkred; /* Texto de color rojo oscuro */
 }
@@ -11,19 +13,23 @@
 /* Estilos específicos para la sección de opciones del encabezado */
 .header #opciones {
     padding: 0; /* Sin relleno */
-    margin-top: 0; /* Sin margen superior */
+    margin-top: 40px; /* Sin margen superior */
+    z-index: 1;
 }
 
 /* Estilos específicos para la sección de usuario del encabezado */
 .header #usuario {
     top: 0; /* Se posiciona en la parte superior */
     background-color: lightgray; /* Fondo gris claro */
+    margin-right: 10px;
     padding: 25px; /* Relleno de 25px */
+    z-index: 2;
 }
 
 /* Estilos para el título principal */
 .header h1{
     float: left; /* Flotar a la izquierda */
+    margin-left: 15px;
     font-family: 'Sofia', cursive; /* Fuente personalizada */
 }
 
@@ -93,7 +99,7 @@
 .header .user-links {
     position: absolute; /* Posición absoluta */
     top: 10px; /* Distancia desde la parte superior de 10px */
-    right: 10px; /* Distancia desde la derecha de 10px */
+    right: 53px; /* Distancia desde la derecha de 10px */
     display: compact; /* Visualización compacta */
     padding: 5px; /* Relleno de 5px */
     align-items: center; /* Alineación vertical al centro */
@@ -104,12 +110,32 @@
     margin-left: 10px; /* Margen izquierdo de 10px */
     text-decoration: none; /* Sin subrayado de enlaces */
     color: darkred; /* Texto de color rojo oscuro */
+    font-family: sans-serif;
+    font-size: 15px;
+    position: static;
 }
 
 /* Estilos al pasar el mouse por encima de los enlaces de la sección de enlaces del usuario */
 .header .user-links a:hover {
     background-color: #ADD8E6; /* Fondo de color azul claro al pasar el mouse */
     border-color: #ADD8E6; /* Borde de color azul claro al pasar el mouse */
+    border-radius: 30px; /* Bordes redondeados */
+    padding: 5px; /* Relleno de 5px */
+}
+
+.btn-login {
+    color: darkred !important;
+    border-radius: 30px;
+    text-decoration: none;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+.btn-login:hover {
+    background-color: #ADD8E6; /* Fondo de color azul claro al pasar el mouse */
+    border-color: transparent; /* Borde de color azul claro al pasar el mouse */
     border-radius: 30px; /* Bordes redondeados */
     padding: 5px; /* Relleno de 5px */
 }

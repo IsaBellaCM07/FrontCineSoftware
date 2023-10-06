@@ -1,5 +1,5 @@
 /* LoginStyle.css */
-
+/*
 body {
     background-image: url('https://cdn2.ondavasca.com/b5a8bcfd-541a-48a3-8a0b-d5a96e084a61_16-9-discover_1200x675.jpg');
     background-size: cover;
@@ -13,6 +13,7 @@ body {
     align-items: center;
     height: 100vh;
 }
+ */
 
 .login-container {
     background-color: rgba(255, 255, 255, 0.8);
