@@ -5,6 +5,7 @@
 }
 
 .formulario-registro{
+    position: relative;
     margin-bottom: 70px;
 }
 
@@ -35,9 +36,10 @@
     border: 1px solid #ccc; /* Borde de 1px sólido con color gris claro */
     border-radius: 10px; /* Añade esquinas redondeadas */
     box-sizing: border-box; /* Incluye el borde en el ancho y alto */
+    height: 40px;
     position: absolute;
-    top: 68vw;
-    bottom: -23vw;
+    top: 27vw;
+    bottom: 20vw;
     right: 50vw;
     left: 40vw;
 }
