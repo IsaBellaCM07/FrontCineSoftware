@@ -2,12 +2,16 @@ import React, {useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEye, faEyeSlash} from "@fortawesome/free-solid-svg-icons";
 import "../styles/FormularioStyle.css"
+import CrearService from "../services/CrearService";
 
 function FormularioCrearCuenta(){
 
     const [mostrarContrasena, setMostrarContrasena] = useState(false);
     const [mostrarConfirmarContrasena, setMostrarConfirmarContrasena] = useState(false);
     const [genero, setGenero] = useState(''); // Agrega el estado para el género
+
+    const [nombre, setNombre] = useState("");
+    const [contra, setContra] = useState("");
 
     const toggleMostrarContrasena = () => {
         setMostrarContrasena(!mostrarContrasena);
@@ -17,6 +21,28 @@ function FormularioCrearCuenta(){
         setMostrarConfirmarContrasena(!mostrarConfirmarContrasena);
     };
 
+    function cambiarNombre(e) {
+        setNombre(e.target.value)
+    }
+
+    function cambiarContra(e) {
+        setContra(e.target.value)
+    }
+
+    function crearUsuario() {
+        const usuario = {
+            codigo: 1,
+            nombre: nombre,
+            nombreUsuario: nombre,
+            contrasenia: contra
+        }
+        CrearService.createUser(usuario).then(response => {
+            console.log(response.data)
+        }).catch(error => {
+            console.log(error)
+        })
+    }
+
     return(
         <div className="formulario-container">
             <form autoComplete="off" className="formulario-registro">
@@ -24,7 +50,7 @@ function FormularioCrearCuenta(){
                     <h2 className="titulo-seccion">01. Datos personales</h2>
                     <div className="formulario-campo">
                         <label htmlFor="nombres">Nombres:</label>
-                        <input type="text" id="nombres" name="nombres" required />
+                        <input type="text" id="nombres" name="nombres" required onChange={cambiarNombre}/>
                     </div>
                     <div className="formulario-campo">
                         <label htmlFor="apellidos">Apellidos:</label>
@@ -70,6 +96,7 @@ function FormularioCrearCuenta(){
                                 id="contrasena"
                                 name="contrasena"
                                 required
+                                onChange={cambiarContra}
                             />
                             <span className="toggle-password" onClick={toggleMostrarContrasena}>
                                     <FontAwesomeIcon icon={mostrarContrasena ? faEye : faEyeSlash} />
@@ -91,7 +118,7 @@ function FormularioCrearCuenta(){
                         </div>
                     </div>
                 </div>
-                <button type="submit" className="formulario-submit">Crear cuenta</button>
+                <button type="button" className="formulario-submit" onClick={crearUsuario}>Crear cuenta</button>
             </form>
         </div>
     )
