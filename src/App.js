@@ -12,6 +12,7 @@ componente dinámicamente, ese
 componente y sus estilos se cargan de forma independiente y se
 mantienen aislados del resto de la aplicación*/
 const LazyLogin = lazy(() => import('./components/Login'));
+const LazyCrearCuenta = lazy(() => import('./components/CrearCuenta'));
 
 function App() {
     return (
@@ -30,6 +31,11 @@ function App() {
                             element={<LazyLogin/>}
                         />
                         <Route path="/cartelera" element={<PeliculasAdmin/>}/>
+
+                        <Route path="/crear-cuenta"
+                               element={<LazyCrearCuenta/>}
+                        />
+
                     </Routes>
                 </div>
 
