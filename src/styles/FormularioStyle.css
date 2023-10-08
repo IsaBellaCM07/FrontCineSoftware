@@ -36,8 +36,10 @@
     border-radius: 10px; /* Añade esquinas redondeadas */
     box-sizing: border-box; /* Incluye el borde en el ancho y alto */
     position: absolute;
+    top: 68vw;
     bottom: -23vw;
     right: 50vw;
+    left: 40vw;
 }
 
 .formulario-submit:hover {
