@@ -1,3 +1,46 @@
+.agregar-container {
+    height: 300px;
+}
+
 .titulo {
     color: darkred;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column; /* Alinea los campos en una columna */
+    margin-left: 50px;
+    float: left;
+}
+
+.campos {
+    display: flex;
+    margin: 10px 0;
+    flex-direction: column;
+    width: 300px;
+}
+
+.campos label {
+    text-align: left;
+    padding-bottom: 5px; /* Espacio bajo las etiquetas */
+
+}
+
+.campos input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.container-poster {
+    margin-left: 300px;
+    height: 200px;
+    width: 200px;
+}
+
+.agregar-poster {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: inherit;
 }
