@@ -20,11 +20,26 @@
     float: left;
 }
 
+.link-poster {
+
+}
+
 .nombre-peli {
     color: darkred;
-    text-align: center;
+    text-align: left;
+    padding-left: 44px;
     height: 30px;
-    width: 400px;
+    width: 200px;
+}
+
+.link-titulo {
+    text-decoration: inherit;
+    color: inherit;
+    display: inline-block;
+}
+
+.link-titulo:hover{
+    font-size: 1.1em;
 }
 
 .horarios-title {
@@ -46,5 +61,15 @@
     padding: 10px 10px 0px;
     border: 2px solid darkred;
     height: 30px;
+}
+
+.horario-item:hover{
+    background-color: darkred;
+    color: white;
+}
+
+.link-horario {
+    text-decoration: inherit;
+    color: inherit;
 }
 
