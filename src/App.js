@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import PaginaInicio from "./components/PaginaInicio";
 import PeliculasAdmin from "./components/PeliculasAdmin";
 import './App.css';
+import AgregarPelicula from "./components/AgregarPelicula";
 
 /*
 React.lazy es para cargar un
@@ -26,13 +27,14 @@ function App() {
                     <Routes>
                         {/* Define una ruta para pagina de inicio */}
                         <Route exact path="/" element={<PaginaInicio/>}/>
-                        {/* Define una ruta para "/iniciar-sesion" */}
+                        {/* Define una ruta para pagina de peliculas del admin */}
                         <Route path="/cartelera" element={<PeliculasAdmin/>}/>
-
+                        {/* Define una ruta para agregar peliculas */}
+                        <Route path="/aniadir-pelicula" element={<AgregarPelicula/>}/>
+                        {/* Define una ruta para crear cuenta*/}
                         <Route path="/crear-cuenta"
                                element={<LazyCrearCuenta/>}
                         />
-
                     </Routes>
                 </div>
 

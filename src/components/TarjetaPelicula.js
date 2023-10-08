@@ -1,13 +1,20 @@
 import React from "react";
 import '../styles/TarjetaPeliculaStyle.css';
 import {Link} from "react-router-dom";
+import PeliculaService from "../services/PeliculaService";
 function TarjetaPelicula (prop){
 
     const peli = prop.movie;
     const horariosCortos = ["01:20", "04:20", "07:20", "10:20"];
     const horariosLargos = ["01:15", "06:15"];
 
-    console.log(peli.duracionMinutos);
+    const eliminarPeli = () => {
+        PeliculaService.deletePelicula(peli.codigo, peli).then(response => {
+                window.location.href = "/cartelera"
+        }).catch(error => {
+            console.log(error)
+        })
+    }
 
     return(
         <div className="container-tarjeta">
@@ -23,6 +30,7 @@ function TarjetaPelicula (prop){
                                 <Link to="/" className="link-horario"><li className="horario-item">{horario}</li></Link>)
                     }
                 </ul>
+                <button className="boton-eliminar" onClick={eliminarPeli}><img src="https://cdn-icons-png.flaticon.com/512/1017/1017530.png" className="img-boton"/></button>
             </article>
         </div>
 

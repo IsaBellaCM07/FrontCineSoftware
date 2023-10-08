@@ -73,3 +73,19 @@
     color: inherit;
 }
 
+.boton-eliminar {
+    background-color: transparent;
+    border-color: transparent;
+    float: right;
+}
+
+.boton-eliminar:hover {
+    background-color: lightcoral;
+    border-radius: 10px;
+}
+
+.img-boton {
+    height: 20px;
+    width: 20px;
+}
+
