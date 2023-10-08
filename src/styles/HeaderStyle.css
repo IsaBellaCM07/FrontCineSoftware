@@ -1,4 +1,5 @@
 /* HeaderStyle.css */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;900&display=swap');
 
 /* Estilos generales del encabezado */
 .header header{
@@ -16,6 +17,8 @@
     padding: 0; /* Sin relleno */
     margin-top: 40px; /* Sin margen superior */
     z-index: 1;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-weight: 500;
 }
 
 /* Estilos específicos para la sección de usuario del encabezado */
@@ -25,14 +28,14 @@
     margin-right: 10px;
     padding: 25px; /* Relleno de 25px */
     z-index: 2;
+    font-family: 'Zen Maru Gothic', sans-serif;
 }
 
 /* Estilos para el título principal */
 .header h1{
     float: left; /* Flotar a la izquierda */
     margin-left: 15px;
-    font-family: 'Sofia', cursive; /* Fuente personalizada */
-}
+    font-family: 'Zen Maru Gothic', sans-serif;}
 
 .header .link {
     text-decoration: inherit;
@@ -64,13 +67,13 @@
 
 /* Estilos al pasar el mouse por encima de los elementos de lista */
 .header .square-list-item:hover {
-    background-color: #ADD8E6; /* Fondo de color azul claro al pasar el mouse */
+    background-color: lightgoldenrodyellow; /* Fondo de color azul claro al pasar el mouse */
 }
 
 /* Estilos al hacer clic en los elementos de lista */
 .header .square-list-item:active {
-    background-color: #ADD8E6; /* Fondo de color azul claro al hacer clic */
-    border: 1px solid #ADD8E6; /* Borde sólido de color azul claro */
+    background-color:lightgoldenrodyellow; /* Fondo de color azul claro al hacer clic */
+    border: 1px solid lightgoldenrodyellow; /* Borde sólido de color azul claro */
     font-weight: bold; /* Texto en negrita */
 }
 
@@ -111,15 +114,16 @@
     margin-left: 10px; /* Margen izquierdo de 10px */
     text-decoration: none; /* Sin subrayado de enlaces */
     color: darkred; /* Texto de color rojo oscuro */
-    font-family: sans-serif;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-weight: 500;
     font-size: 15px;
     position: static;
 }
 
 /* Estilos al pasar el mouse por encima de los enlaces de la sección de enlaces del usuario */
 .header .user-links a:hover {
-    background-color: #ADD8E6; /* Fondo de color azul claro al pasar el mouse */
-    border-color: #ADD8E6; /* Borde de color azul claro al pasar el mouse */
+    background-color: lightgoldenrodyellow; /* Fondo de color azul claro al pasar el mouse */
+    border-color: lightgoldenrodyellow; /* Borde de color azul claro al pasar el mouse */
     border-radius: 30px; /* Bordes redondeados */
     padding: 5px; /* Relleno de 5px */
 }
@@ -131,11 +135,12 @@
     background-color: transparent;
     border-color: transparent;
     font-size: 15px;
-    font-family: sans-serif;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-weight: 500;
 }
 
 .btn-login:hover {
-    background-color: #ADD8E6; /* Fondo de color azul claro al pasar el mouse */
+    background-color: lightgoldenrodyellow; /* Fondo de color azul claro al pasar el mouse */
     border-color: transparent; /* Borde de color azul claro al pasar el mouse */
     border-radius: 30px; /* Bordes redondeados */
     padding: 5px; /* Relleno de 5px */
