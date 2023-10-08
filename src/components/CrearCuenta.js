@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../styles/CrearCuentaStyle.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import BannerPubliMemb from "./BannerPubliMemb";
