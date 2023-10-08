@@ -9,11 +9,13 @@
     bottom: 0;
     padding: 15px;
     color: darkred;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-weight: 500;
 }
 
 .footer footer h2 {
     float: left; /* Flotar a la izquierda */
-    font-family: 'Sofia', cursive; /* Fuente personalizada */
+    font-family: 'Zen Maru Gothic', sans-serif;
     margin-top: 9px;
     margin-left: 5px;
 }

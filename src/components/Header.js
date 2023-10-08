@@ -27,7 +27,7 @@ function Header({usuario, inicioSesion}) {
                             usuario == null ? (
                                 <div>
                                     <button onClick={modalLogin ? cerrarModal : abrirModal} className="btn-login">Iniciar Sesión</button>
-                                    <a href="/crear-cuenta">Crear cuenta</a>
+                                    <a className="btn-login" href="/crear-cuenta">Crear cuenta</a>
                                     {modalLogin && <Login inicioSesion={inicioSesion}/>}
                                 </div>
                             ) : (
