@@ -1,9 +1,35 @@
 // Login.js
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom'; // Importa Link para crear enlaces internos
 import '../styles/LoginStyle.css';
+import LoginService from "../services/LoginService";
 
-function Login() {
+function Login({inicioSesion}) {
+
+    const [nombreUs, setNombre] = useState("");
+    const [contra, setContra] = useState("");
+
+
+    function cambiarUsuario(e) {
+        setNombre(e.target.value);
+    }
+
+    function cambiarContra(e) {
+        setContra(e.target.value);
+    }
+
+    function iniciarSesion() {
+        const sesionDTO = {
+            nombreUsuario: nombreUs,
+            contrasenia: contra
+        }
+        LoginService.login(sesionDTO).then(response => {
+            inicioSesion(response.data);
+        }).catch(error => {
+            console.log(error);
+        })
+    }
+
     return (
         <div className="login-container">
             <h2>Iniciar Sesión</h2>
@@ -12,13 +38,15 @@ function Login() {
                     type="text"
                     className="login-input"
                     placeholder="Usuario"
+                    onChange={cambiarUsuario}
                 />
                 <input
                     type="password"
                     className="login-input"
                     placeholder="Contraseña"
+                    onChange={cambiarContra}
                 />
-                <button type="submit" className="login-button">
+                <button type="button" className="login-button" onClick={iniciarSesion}>
                     Ingresar
                 </button>
             </form>
