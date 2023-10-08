@@ -22,33 +22,41 @@ function TarjetaPelicula(prop) {
     };
 
     const eliminarPeli = () => {
-        PeliculaService.deletePelicula(peli.codigo, peli).then(response => {
-            window.location.href = "/cartelera"
-        }).catch(error => {
-            console.log(error)
-        })
+        if(usuario){
+            PeliculaService.deletePelicula(peli.codigo, peli).then(response => {
+                window.location.href = "/cartelera"
+            }).catch(error => {
+                console.log(error)
+            })
+        }else{
+            alert("Desbes iniciar sesión");
+        }
     };
 
     const agregarHorario = () => {
-        if (nuevoHorario.trim() === "") {
-            return; // Evita agregar horarios vacíos
+        if(usuario){
+            if (nuevoHorario.trim() === "") {
+                return; // Evita agregar horarios vacíos
+            }
+
+            // Determina a cuál array agregar el nuevo horario en función de la duración de la película
+            const horarios = peli.duracionMinutos < 140 ? [...horariosCortos] : [...horariosLargos];
+
+            // Agrega el nuevo horario al array
+            horarios.push(nuevoHorario);
+
+            // Actualiza el estado correspondiente con el nuevo array de horarios
+            if (peli.duracionMinutos < 140) {
+                setHorariosCortos(horarios);
+            } else {
+                setHorariosLargos(horarios);
+            }
+
+            // Limpia el campo de entrada del nuevo horario
+            setNuevoHorario("");
+        }else{
+            alert("Desbes iniciar sesión");
         }
-
-        // Determina a cuál array agregar el nuevo horario en función de la duración de la película
-        const horarios = peli.duracionMinutos < 140 ? [...horariosCortos] : [...horariosLargos];
-
-        // Agrega el nuevo horario al array
-        horarios.push(nuevoHorario);
-
-        // Actualiza el estado correspondiente con el nuevo array de horarios
-        if (peli.duracionMinutos < 140) {
-            setHorariosCortos(horarios);
-        } else {
-            setHorariosLargos(horarios);
-        }
-
-        // Limpia el campo de entrada del nuevo horario
-        setNuevoHorario("");
     };
 
     return (

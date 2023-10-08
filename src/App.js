@@ -15,6 +15,11 @@ mantienen aislados del resto de la aplicación*/
 const LazyCrearCuenta = lazy(() => import('./components/CrearCuenta'));
 
 function App() {
+
+    window.onload = function () {
+        localStorage.setItem("user", JSON.stringify(null));
+    }
+
     const iniciarUsuario = () => {
         const usuarioInicial = JSON.parse(localStorage.getItem("user"));
         if(usuarioInicial == null){
