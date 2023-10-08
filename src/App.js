@@ -15,18 +15,27 @@ mantienen aislados del resto de la aplicación*/
 const LazyCrearCuenta = lazy(() => import('./components/CrearCuenta'));
 
 function App() {
+    const iniciarUsuario = () => {
+        const usuarioInicial = JSON.parse(localStorage.getItem("user"));
+        if(usuarioInicial == null){
+            return null;
+        }else{
+            return usuarioInicial;
+        }
+    }
 
-    const [sesion, setSesion] = useState(false);
+    const [usuario, setUsuario] = useState(iniciarUsuario);
 
-    function inicioSesion(nuevaSesion){
-        setSesion(nuevaSesion);
+    function inicioSesion(nuevoUsuario){
+        setUsuario(nuevoUsuario);
+        localStorage.setItem("user", JSON.stringify(nuevoUsuario));
     }
 
     return (
         <div className="App">
             <BrowserRouter>
                 {/* Renderiza el componente Header en la parte superior de la aplicación */}
-                <Header sesion={sesion} inicioSesion={inicioSesion}/>
+                <Header usuario={usuario} inicioSesion={inicioSesion}/>
 
                 {/* Crea un contenedor para el contenido principal */}
                 <div className="container">
@@ -34,7 +43,7 @@ function App() {
                         {/* Define una ruta para pagina de inicio */}
                         <Route exact path="/" element={<PaginaInicio/>}/>
                         {/* Define una ruta para pagina de peliculas del admin */}
-                        <Route path="/cartelera" element={<PeliculasAdmin sesion={sesion}/>}/>
+                        <Route path="/cartelera" element={<PeliculasAdmin usuario={usuario}/>}/>
                         {/* Define una ruta para agregar peliculas */}
                         <Route path="/aniadir-pelicula" element={<AgregarPelicula/>}/>
                         {/* Define una ruta para crear cuenta*/}

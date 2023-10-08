@@ -5,6 +5,7 @@ import PeliculaService from "../services/PeliculaService";
 
 function TarjetaPelicula(prop) {
     const peli = prop.movie;
+    const usuario = prop.usuario;
     const [horarioSeleccionado, setHorarioSeleccionado] = useState(null);
     const [nuevoHorario, setNuevoHorario] = useState("");
     const [horarios, setHorarios] = useState(peli.listaHorarios);
