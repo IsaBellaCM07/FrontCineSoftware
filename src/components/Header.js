@@ -4,8 +4,9 @@ import {Link, useLocation} from 'react-router-dom';
 import Login from "./Login"
 import '../styles/HeaderStyle.css';
 
-function Header({sesion, inicioSesion}) {
+function Header({usuario, inicioSesion}) {
 
+    console.log(usuario);
 
     const [modalLogin, setModalLogin] = useState(false);
 
@@ -23,7 +24,7 @@ function Header({sesion, inicioSesion}) {
                 <header id="usuario">
                     <div className="user-links">
                         {
-                            !sesion ? (
+                            usuario == null ? (
                                 <div>
                                     <button onClick={modalLogin ? cerrarModal : abrirModal} className="btn-login">Iniciar Sesión</button>
                                     <a href="/crear-cuenta">Crear cuenta</a>
@@ -31,7 +32,7 @@ function Header({sesion, inicioSesion}) {
                                 </div>
                             ) : (
                                 <div>
-                                    <button className="btn-login">Hola</button>
+                                    <button className="btn-login">Hola {usuario.nombreUsuario}</button>
                                 </div>
                             )
                         }

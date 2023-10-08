@@ -24,7 +24,8 @@ function Login({inicioSesion}) {
             contrasenia: contra
         }
         LoginService.login(sesionDTO).then(response => {
-            inicioSesion(response.data);
+            inicioSesion(response.data.response);
+            console.log(response.data)
         }).catch(error => {
             console.log(error);
         })
