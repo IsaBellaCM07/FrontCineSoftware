@@ -127,6 +127,17 @@
     border-radius: 10px;
 }
 
+.boton-elim {
+    background-color: transparent;
+    height: 30px;
+    margin-left: -9%;
+}
+
+.boton-elim:hover {
+    background-color: lightgoldenrodyellow;
+    border-radius: 10px;
+}
+
 .horario-input {
     display: flex;
     align-items: center;

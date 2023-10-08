@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/TarjetaPeliculaStyle.css";
 import { Link } from "react-router-dom";
 import PeliculaService from "../services/PeliculaService";
 
 function TarjetaPelicula(prop) {
     const peli = prop.movie;
-    const usuario = prop.usuario;
     const [horarioSeleccionado, setHorarioSeleccionado] = useState(null);
     const [nuevoHorario, setNuevoHorario] = useState("");
     const [horarios, setHorarios] = useState(peli.listaHorarios);
@@ -33,8 +32,27 @@ function TarjetaPelicula(prop) {
             return;
         }
 
-        setHorarios([...horarios, nuevoHorario]);
+        if (horarioSeleccionado) {
+            // Reemplazar el horario seleccionado con el nuevo horario
+            const nuevosHorarios = horarios.map((horario) =>
+                horario === horarioSeleccionado ? nuevoHorario : horario
+            );
+            setHorarios(nuevosHorarios);
+            setHorarioSeleccionado(null);
+        } else {
+            setHorarios([...horarios, nuevoHorario]);
+        }
+
         setNuevoHorario("");
+    };
+
+    const eliminarHorario = () => {
+        if (horarioSeleccionado) {
+            // Filtrar la lista de horarios para eliminar el horario seleccionado
+            const nuevosHorarios = horarios.filter((horario) => horario !== horarioSeleccionado);
+            setHorarios(nuevosHorarios);
+            setHorarioSeleccionado(null);
+        }
     };
 
     return (
@@ -73,6 +91,13 @@ function TarjetaPelicula(prop) {
                                 className="img-boton"
                                 src="https://cdn-icons-png.flaticon.com/512/117/117885.png"
                                 alt="Agregar horario"
+                            />
+                        </button>
+                        <button className="boton-elim" onClick={eliminarHorario}>
+                            <img
+                                className="img-boton"
+                                src="https://cdn-icons-png.flaticon.com/512/1017/1017530.png"
+                                alt="Eliminar horario"
                             />
                         </button>
                     </div>
