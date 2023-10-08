@@ -1,0 +1,53 @@
+#BannerRegister {
+    /* Establece el fondo y el color de texto para #BannerRegister */
+    background: rgb(37, 37, 37); /* Fondo gris oscuro */
+    color: white; /* Texto blanco */
+    /* Configura el diseño del contenedor #BannerRegister */
+    display: flex; /* Usa el modelo de caja flexible */
+    flex-direction: column; /* Columna principal */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Alinea el texto al centro */
+    margin-top: 20px; /* Margen superior de 20px */
+    padding: 20px; /* Relleno interno de 20px */
+    font-family: "Roboto Condensed",sans-serif; /* Establece la fuente de texto */
+}
+
+.tipo-letra {
+    color: inherit; /* Usa el color heredado (blanco) */
+    margin: 10px 0; /* Margen superior e inferior de 10px, sin margen lateral */
+}
+
+.ContentStep {
+    /* Configura el diseño de la sección ContentStep */
+    display: flex; /* Usa el modelo de caja flexible */
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
+    align-items: center; /* Centra verticalmente */
+    margin-top: 20px; /* Margen superior de 20px */
+    margin-bottom: 40px; /* Margen inferior de 40px */
+}
+
+.Step, .Plus {
+    /* Establece el diseño común para los elementos con clases Step y Plus */
+    width: 186px; /* Ancho de 186px */
+    height: 106px; /* Alto de 106px */
+    display: flex; /* Usa el modelo de caja flexible */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    font-weight: 700; /* Grosor de fuente 700 (negrita) */
+}
+
+.Plus {
+    /* Cambia las propiedades específicas para elementos con clase Plus */
+    width: 44px; /* Ancho de 44px */
+    height: 44px; /* Alto de 44px */
+    border-radius: 50%; /* Crea un borde circular */
+    border: 2px solid white; /* Añade un borde sólido blanco */
+    margin: 0 35px; /* Margen izquierdo y derecho de 0px y 35px respectivamente */
+}
+
+.Icon {
+    width: 64px; /* Ancho deseado de 64px */
+    height: 64px; /* Alto deseado de 64px */
+    margin-top: 5px; /* Ajusta el margen superior según sea necesario */
+}

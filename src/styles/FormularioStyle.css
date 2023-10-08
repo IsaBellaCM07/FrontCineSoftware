@@ -1,0 +1,97 @@
+.formulario-container {
+    display: inline; /* Usa el modelo de caja flexible */
+    align-items: center; /* Centra horizontalmente */
+    padding: 20px; /* Espacio entre el banner y el formulario */
+}
+
+.formulario-registro{
+    margin-bottom: 70px;
+}
+
+.formulario-seccion1 {
+    margin-left: 90px;
+    text-align: left; /* Alineación del encabezado a la izquierda */
+    display: inline-block;
+}
+
+.formulario-seccion2 {
+    margin-bottom: 20px; /* Espacio entre secciones de datos personales y email de acceso */
+    display: inline-block;
+    text-align: left; /* Alineación del encabezado a la izquierda */
+    margin-left: 400px;
+}
+
+.titulo-seccion {
+    color: darkred; /* Cambia el color del encabezado h2 a rojo oscuro */
+}
+
+.formulario-submit {
+    background-color: darkred; /* Fondo rojo oscuro */
+    color: white; /* Texto blanco */
+    font-size: 16px; /* Tamaño de fuente de 16px */
+    width: auto; /* Ancho automático (ajustará el ancho al contenido) */
+    padding: 10px; /* Relleno interno de 10px */
+    margin: 10px auto; /* Margen superior e inferior 10px y margen lateral automático */
+    border: 1px solid #ccc; /* Borde de 1px sólido con color gris claro */
+    border-radius: 10px; /* Añade esquinas redondeadas */
+    box-sizing: border-box; /* Incluye el borde en el ancho y alto */
+    position: absolute;
+    bottom: -270px;
+    right: 600px;
+
+}
+
+.formulario-submit:hover {
+    background-color: #a70000; /* Cambia el color de fondo al pasar el cursor */
+}
+
+
+/* Agrega reglas CSS para los campos del formulario */
+.formulario-campo {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.formulario-campo #genero {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    width: 176%;
+}
+
+.formulario-campo label {
+    width: 30%; /* Ancho del 30% para etiquetas de campo */
+    text-align: left;
+}
+
+.formulario-campo input,
+.formulario-campo select {
+    flex: 1; /* Toma el espacio restante */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-left: 5px;
+}
+
+.campo-password {
+    position: relative;
+}
+
+.campo-password input {
+    width: 148%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: -80px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: darkred;
+}

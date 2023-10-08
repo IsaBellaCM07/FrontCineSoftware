@@ -24,12 +24,9 @@ function App() {
                 {/* Crea un contenedor para el contenido principal */}
                 <div className="container">
                     <Routes>
-                        {/* Define una ruta para "/iniciar-sesion" */}
+                        {/* Define una ruta para pagina de inicio */}
                         <Route exact path="/" element={<PaginaInicio/>}/>
-                        <Route
-                            path="/iniciar-sesion"
-                            element={<LazyLogin/>}
-                        />
+                        {/* Define una ruta para "/iniciar-sesion" */}
                         <Route path="/cartelera" element={<PeliculasAdmin/>}/>
 
                         <Route path="/crear-cuenta"
