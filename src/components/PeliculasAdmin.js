@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import PeliculaService from "../services/PeliculaService";
 import TarjetaPelicula from "./TarjetaPelicula";
 import '../styles/PeliculasStyle.css';
+import {Link} from "react-router-dom";
 
 
 
@@ -24,6 +25,7 @@ export const PeliculasAdmin = () => {
     }
     return (
         <div className="tarjetas">
+                <Link to="/aniadir-pelicula"><h3 className="aniadir">+</h3></Link>
                 {
                     peliculas.map(pelicula =>
                         <TarjetaPelicula movie = {pelicula}/>

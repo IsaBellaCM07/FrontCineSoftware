@@ -12,7 +12,7 @@ function TarjetaPelicula (prop){
     return(
         <div className="container-tarjeta">
             <article className="tarjeta">
-                <Link to="/" className="link-poster"><img src="https://hips.hearstapps.com/hmg-prod/images/gabz-godfather-1646152137.png" className="poster"/></Link>
+                <Link to="/" className="link-poster"><img src={peli.link} className="poster"/></Link>
                 <Link to="/" className="link-titulo"><h2 key={peli.id} className="nombre-peli">{peli.nombre}</h2></Link>
                 <h3 className="horarios-title">Horarios:</h3>
                 <ul className="horarios-list">

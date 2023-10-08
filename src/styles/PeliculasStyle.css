@@ -1,3 +1,21 @@
-.tarjetas {
+.aniadir {
+    border: 2px solid darkred;
+    background-color: white;
+    color: darkred;
+    text-align: center;
+    border-radius: 20px;
+    position: fixed;
+    width: 40px;
+    height: 25px;
+    padding: 0 0 5px;
+}
 
+.aniadir:hover{
+    background-color: darkred;
+    color: white;
+}
+
+.link-aniadir {
+    text-decoration: inherit;
+    color: inherit;
 }
