@@ -9,7 +9,7 @@
     align-items: center; /* Centra horizontalmente */
     text-align: center; /* Alinea el texto al centro */
     margin-top: 20px; /* Margen superior de 20px */
-    padding: 20px; /* Relleno interno de 20px */
+    padding: 5px; /* Relleno interno de 20px */
     font-family: "Roboto Condensed",sans-serif; /* Establece la fuente de texto */
 }
 

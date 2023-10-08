@@ -1,100 +1,82 @@
-.formulario-container {
-    display: inline; /* Usa el modelo de caja flexible */
-    align-items: center; /* Centra horizontalmente */
-    padding: 20px; /* Espacio entre el banner y el formulario */
+/* Establece un ancho máximo para el formulario */
+.formulario-registro {
+    max-width: 600px; /* Ajusta el valor según tus preferencias */
+    margin: 0 auto 100px; /* Centra horizontalmente */
+    padding: 20px;
+    display: flex; /* Usa flexbox para organizar los campos */
+    justify-content: space-between; /* Distribuye los campos uniformemente */
+
 }
 
-.formulario-registro{
-    position: relative;
-    margin-bottom: 70px;
-}
-
-.formulario-seccion1 {
-    margin-left: 90px;
-    text-align: left; /* Alineación del encabezado a la izquierda */
-    display: inline-block;
-}
-
+/* Establece el ancho y márgenes de las secciones */
+.formulario-seccion1,
 .formulario-seccion2 {
-    margin-bottom: 20px; /* Espacio entre secciones de datos personales y email de acceso */
-    display: inline-block;
-    text-align: left; /* Alineación del encabezado a la izquierda */
-    margin-left: 400px;
+    flex: 1; /* Toma el espacio disponible igualmente */
+    margin: 0 10px; /* Margen entre las secciones */
 }
 
-.titulo-seccion {
-    color: darkred; /* Cambia el color del encabezado h2 a rojo oscuro */
-}
-
-.formulario-submit {
-    background-color: darkred; /* Fondo rojo oscuro */
-    color: white; /* Texto blanco */
-    font-size: 16px; /* Tamaño de fuente de 16px */
-    width: auto; /* Ancho automático (ajustará el ancho al contenido) */
-    padding: 10px; /* Relleno interno de 10px */
-    margin: 10px auto; /* Margen superior e inferior 10px y margen lateral automático */
-    border: 1px solid #ccc; /* Borde de 1px sólido con color gris claro */
-    border-radius: 10px; /* Añade esquinas redondeadas */
-    box-sizing: border-box; /* Incluye el borde en el ancho y alto */
-    height: 40px;
-    position: absolute;
-    top: 27vw;
-    bottom: 20vw;
-    right: 50vw;
-    left: 40vw;
-}
-
-.formulario-submit:hover {
-    background-color: #a70000; /* Cambia el color de fondo al pasar el cursor */
-}
-
-
-/* Agrega reglas CSS para los campos del formulario */
+/* Alinea todos los campos a la izquierda */
 .formulario-campo {
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Alinea los campos en una columna */
     margin: 10px 0;
 }
 
-.formulario-campo #genero {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-    width: 176%;
-}
-
+/* Establece el ancho de las etiquetas de campo */
 .formulario-campo label {
-    width: 30%; /* Ancho del 30% para etiquetas de campo */
     text-align: left;
+    padding-bottom: 5px; /* Espacio bajo las etiquetas */
 }
 
+/* Establece la anchura de los campos de entrada y selects */
 .formulario-campo input,
 .formulario-campo select {
-    flex: 1; /* Toma el espacio restante */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-sizing: border-box;
-    margin-left: 5px;
+    margin-top: 5px; /* Espacio entre los campos */
+    width: 100%; /* Ocupa todo el ancho disponible */
 }
 
+/* Estilo para los campos de contraseña */
 .campo-password {
     position: relative;
 }
 
 .campo-password input {
-    width: 148%;
-    padding: 10px;
+    width: 100%;
+}
+
+.formulario-submit {
+    background-color: darkred;
+    color: white;
+    font-size: 14px; /* Reduzco el tamaño de fuente */
+    padding: 8px 16px; /* Reduzco el espacio interno */
     border: 1px solid #ccc;
     border-radius: 10px;
     box-sizing: border-box;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 200px; /* Establece un ancho máximo para el botón */
+    margin: 25px; /* Margen superior e inferior 20px y margen lateral automático */
+    text-align: center; /* Alinea el texto al centro */
+    display: block; /* Convierte el botón en un elemento de bloque para centrarlo */
+    position: absolute;
+    bottom: -240px; /* Ajusta la posición vertical */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Centra horizontalmente */
+
 }
 
 .toggle-password {
     position: absolute;
-    top: 50%;
-    right: -80px;
+    top: 55%;
+    right: 10px;
     transform: translateY(-50%);
     cursor: pointer;
     color: darkred;
+}
+
+.titulo-seccion {
+    color: darkred; /* Cambia el color del encabezado h2 a rojo oscuro */
 }
