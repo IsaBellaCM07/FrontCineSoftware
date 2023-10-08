@@ -8,6 +8,7 @@
     width: 100vw;
     background-color: white; /* Fondo blanco */
     color: darkred; /* Texto de color rojo oscuro */
+    max-width: 100%;
 }
 
 /* Estilos específicos para la sección de opciones del encabezado */
