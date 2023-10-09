@@ -1,5 +1,5 @@
 .agregar-container {
-    height: 300px;
+    height: 450px;
 }
 
 .titulo {
@@ -43,4 +43,22 @@
     max-height: 100%;
     max-width: 100%;
     object-fit: inherit;
+}
+
+
+.btn-agregar{
+    background-color: darkred;
+    color: white;
+    font-size: 14px; /* Reduzco el tamaño de fuente */
+    padding: 8px 16px; /* Reduzco el espacio interno */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 500px; /* Margen superior e inferior 20px y margen lateral automático */
+    position: absolute;
+    bottom: -320px; /* Ajusta la posición vertical */
+    left: -20%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Centra horizontalmente */
+}
+.btn-agregar:hover{
+    background-color: crimson;
 }

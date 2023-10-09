@@ -87,7 +87,7 @@ function AgregarPelicula() {
                     />
                 </div>
             </div>
-            <button onClick={aniadirPelicula}>Agregar</button>
+            <button type="submit" className="btn-agregar" onClick={aniadirPelicula}>Agregar</button>
         </div>
     );
 }
