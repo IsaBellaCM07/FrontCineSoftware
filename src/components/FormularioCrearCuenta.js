@@ -31,7 +31,7 @@ function FormularioCrearCuenta(){
 
     function crearUsuario() {
         const usuario = {
-            codigo: 1,
+            codigo: (Math.random() * 1000),
             nombre: nombre,
             nombreUsuario: nombre,
             contrasenia: contra
