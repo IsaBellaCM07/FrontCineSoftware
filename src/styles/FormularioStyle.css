@@ -68,6 +68,11 @@
 
 }
 
+.formulario-submit:hover{
+
+    background-color: crimson; /* Fondo de color azul claro al pasar el mouse */
+}
+
 .toggle-password {
     position: absolute;
     top: 55%;
