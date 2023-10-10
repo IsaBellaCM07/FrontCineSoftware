@@ -4,11 +4,18 @@ import { Link } from "react-router-dom";
 import PeliculaService from "../services/PeliculaService";
 
 function TarjetaPelicula(prop) {
+
+    /* Constantes que se traen como parametros del componente */
     const peli = prop.movie;
+    const usuario = prop.usuario;
+
+    /* Todas las constantes que usan useState para irse modificando durante la ejecución del programa
+     * y son utilizadas para todo lo relacionado con los horarios */
     const [horarioSeleccionado, setHorarioSeleccionado] = useState(null);
     const [nuevoHorario, setNuevoHorario] = useState("");
     const [horarios, setHorarios] = useState(peli.listaHorarios);
 
+    /* Metodo que deja setea un horario cuando se le da clic y queda seleccionado */
     const seleccionarHorario = (horario) => {
         if (horario === horarioSeleccionado) {
             setHorarioSeleccionado(null);
@@ -17,44 +24,63 @@ function TarjetaPelicula(prop) {
         }
     };
 
+    /* Metodo que mediante PeliculaService elimina una pelicula de la base de datos pasandole
+     * por parametro tanto la pelicula como su codigo pero antes verifica que el usuario ya
+     * inicio sesión */
     const eliminarPeli = () => {
-        PeliculaService.deletePelicula(peli.codigo, peli)
-            .then((response) => {
-                window.location.href = "/cartelera";
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        if (usuario != null){
+            PeliculaService.deletePelicula(peli.codigo, peli)
+                .then((response) => {
+                    window.location.href = "/cartelera";
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }else{
+            alert("Debes iniciar sesión");
+        }
     };
 
+    /* Agrega un horario a la trajeta de la pelicula escribiendolo en el input pero primero tiene que
+     * haber inciado sesión */
     const agregarHorario = () => {
-        if (nuevoHorario.trim() === "") {
-            return;
-        }
+        if(usuario != null){
+            if (nuevoHorario.trim() === "") {
+                return;
+            }
 
-        if (horarioSeleccionado) {
-            // Reemplazar el horario seleccionado con el nuevo horario
-            const nuevosHorarios = horarios.map((horario) =>
-                horario === horarioSeleccionado ? nuevoHorario : horario
-            );
-            setHorarios(nuevosHorarios);
-            setHorarioSeleccionado(null);
-        } else {
-            setHorarios([...horarios, nuevoHorario]);
+            if (horarioSeleccionado) {
+                // Reemplazar el horario seleccionado con el nuevo horario
+                const nuevosHorarios = horarios.map((horario) =>
+                    horario === horarioSeleccionado ? nuevoHorario : horario
+                );
+                setHorarios(nuevosHorarios);
+                setHorarioSeleccionado(null);
+            } else {
+                setHorarios([...horarios, nuevoHorario]);
+            }
+            setNuevoHorario("");
+        }else{
+            alert("Debes iniciar sesión");
         }
-
-        setNuevoHorario("");
     };
 
+    /* Elimina un horario en la trajeta de la pelicula seleccionando el horario a eliminar pero primero tiene que
+     * haber inciado sesión */
     const eliminarHorario = () => {
-        if (horarioSeleccionado) {
-            // Filtrar la lista de horarios para eliminar el horario seleccionado
-            const nuevosHorarios = horarios.filter((horario) => horario !== horarioSeleccionado);
-            setHorarios(nuevosHorarios);
-            setHorarioSeleccionado(null);
+        if(usuario != null){
+            if (horarioSeleccionado) {
+                // Filtrar la lista de horarios para eliminar el horario seleccionado
+                const nuevosHorarios = horarios.filter((horario) => horario !== horarioSeleccionado);
+                setHorarios(nuevosHorarios);
+                setHorarioSeleccionado(null);
+            }
+        }else{
+            alert("Debes iniciar sesión");
         }
     };
 
+    /* Todo el codigo html que forma la estructura del componente */
     return (
         <div className="container-tarjeta">
             <article className="tarjeta">

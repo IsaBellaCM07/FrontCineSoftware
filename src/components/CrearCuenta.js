@@ -6,11 +6,12 @@ import FormularioCrearCuenta from "./FormularioCrearCuenta";
 
 function CrearCuenta() {
 
-
+    /* Este codigo html llama a los componentes que forman este comoponente de crear cuenta */
     return (
         <div className="letra">
+            {/* Componente del Banner */}
             <BannerPubliMemb/>
-            {/* Formulario */}
+            {/* Componente del Formulario */}
             <FormularioCrearCuenta/>
         </div>
     );

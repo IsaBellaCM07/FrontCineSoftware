@@ -5,12 +5,7 @@ import {Link, useLocation} from "react-router-dom";
 
 function Footer(){
 
-    const location = useLocation();
-
-    if(location.pathname==="/iniciar-sesion"){
-        return null;
-    }
-
+    /* Codigo html que forma todo la estructura del Footer */
     return(
         <div className="footer">
             <footer>
@@ -19,7 +14,6 @@ function Footer(){
             </footer>
         </div>
     );
-
 }
 
 export default Footer;

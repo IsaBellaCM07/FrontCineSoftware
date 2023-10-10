@@ -55,7 +55,7 @@
     border-radius: 10px;
     margin: 500px; /* Margen superior e inferior 20px y margen lateral automático */
     position: absolute;
-    bottom: -320px; /* Ajusta la posición vertical */
+    bottom: -430px; /* Ajusta la posición vertical */
     left: -20%; /* Centra horizontalmente */
     transform: translateX(-50%); /* Centra horizontalmente */
 }

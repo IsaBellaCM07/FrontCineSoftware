@@ -6,29 +6,40 @@ import CrearService from "../services/CrearService";
 
 function FormularioCrearCuenta(){
 
+    /* Estas constantes son utilizadas para usar la función de ocultar y mostrar contraseña */
     const [mostrarContrasena, setMostrarContrasena] = useState(false);
     const [mostrarConfirmarContrasena, setMostrarConfirmarContrasena] = useState(false);
-    const [genero, setGenero] = useState(''); // Agrega el estado para el género
 
+    /* Todas las constantes que usan useState para irse modificando durante la ejecución del programa
+     * y son usadas para crear el usuario */
+    const [genero, setGenero] = useState(''); // Agrega el estado para el género
     const [nombre, setNombre] = useState("");
     const [contra, setContra] = useState("");
 
+    /* Metodo que muestra la contraseña */
     const toggleMostrarContrasena = () => {
         setMostrarContrasena(!mostrarContrasena);
     };
 
+    /* Metodo que muestra la contraseña */
     const toggleMostrarConfirmarContrasena = () => {
         setMostrarConfirmarContrasena(!mostrarConfirmarContrasena);
     };
 
+    /*Metodo que setea el nombre del usuario despues
+    de darle click en el boton */
     function cambiarNombre(e) {
         setNombre(e.target.value)
     }
 
+    /*Metodo que setea la contraseña del usuario despues
+    de darle click en el boton */
     function cambiarContra(e) {
         setContra(e.target.value)
     }
 
+    /* Metodo que usa todos los atributos seteados anteriormente para crear un objeto usuario
+     * y este enviarselo por medio de CrearService al back */
     function crearUsuario() {
         const usuario = {
             codigo: (Math.random() * 1000),
@@ -43,6 +54,7 @@ function FormularioCrearCuenta(){
         })
     }
 
+    /* Todo el codigo html que forma la estructura del componente */
     return(
         <div className="formulario-container">
             <form autoComplete="off" className="formulario-registro">
