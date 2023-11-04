@@ -1,0 +1,54 @@
+/* CombosConDescuento.css */
+
+.combos-con-descuento {
+    text-align: center; /* Alinea el título al centro */
+    padding: 20px;
+    color: darkred;
+}
+
+.combos-con-descuento h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container-amarillo {
+    background-color: darkgoldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Estilos para las tarjetas dentro del contenedor amarillo */
+.combo-tarjeta {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+
+}
+
+.combo-accion {
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.combo-cantidad {
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+

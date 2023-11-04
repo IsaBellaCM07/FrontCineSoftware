@@ -6,6 +6,8 @@ import PaginaInicio from "./components/PaginaInicio";
 import PeliculasAdmin from "./components/PeliculasAdmin";
 import './App.css';
 import AgregarPelicula from "./components/AgregarPelicula";
+import Confiteria from "./components/CuadriculaTarjeta";
+
 
 /*
 React.lazy es para cargar un
@@ -54,6 +56,9 @@ function App() {
                         {/* Define una ruta para crear cuenta*/}
                         <Route path="/crear-cuenta"
                                element={<LazyCrearCuenta/>}
+                        />
+                        <Route path="/confiteria"
+                               element={<Confiteria/>}
                         />
                     </Routes>
                 </div>

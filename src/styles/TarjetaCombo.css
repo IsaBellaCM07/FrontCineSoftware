@@ -1,0 +1,76 @@
+/* Estilos para la tarjeta de combo */
+.combo-tarjeta {
+    display: inline-block; /* Muestra las tarjetas en línea horizontalmente */
+    width: 200px; /* Ancho de la tarjeta */
+    margin: 10px; /* Margen entre las tarjetas */
+    padding: 10px;
+    border: 1px solid #ccc; /* Borde para cada tarjeta */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    text-align: center;
+    background-color: #fff;
+    min-height: 400px;
+}
+
+/* Estilos para la imagen del combo */
+.combo-imagen__img {
+    max-width: 100%; /* Ajustar la imagen al ancho de la tarjeta */
+}
+
+/* Estilos para el nombre del combo */
+.combo-nombre_texto {
+    font-size: 16px;
+    margin: 10px 0;
+    color: darkred;
+}
+
+/* Estilos para la descripción */
+.combo-descripcion {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Estilos para el precio */
+.combo-precio {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: darkred;
+}
+
+/* Estilos para las acciones (restar, cantidad, agregar) */
+.combo-acciones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.combo-acciones button{
+    background-color: crimson;
+}
+
+/* Estilos para la cantidad */
+.combo-cantidad {
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.combo-tarjeta {
+    display: inline-block; /* Muestra las tarjetas en línea horizontalmente */
+    width: 200px; /* Ancho de la tarjeta */
+    height: 430px; /* Altura fija de la tarjeta */
+    margin: 10px; /* Margen entre las tarjetas */
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    overflow: hidden; /* Para que el contenido no haga que la tarjeta crezca */
+}
+
+.combo-imagen__img img {
+    max-width: 100%; /* Ajusta el ancho máximo de la imagen */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    display: block; /* Elimina cualquier espacio adicional alrededor de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+
