@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/BannerStyle.css"
 
 function BannerPubliMemb(){
-
+    /* Codigo html que forma el banner de publicidad */
     return(
         <div id="BannerRegister" className="ant-row">
             <div id="BannerRegister" className="ant-row">

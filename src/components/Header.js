@@ -6,18 +6,20 @@ import '../styles/HeaderStyle.css';
 
 function Header({usuario, inicioSesion}) {
 
-    console.log(usuario);
-
+    /* Constante que usa useState para modificarse */
     const [modalLogin, setModalLogin] = useState(false);
 
+    /* Setea la constante anterior para abrir el cuadrito emergente de iniciar sesión */
     const abrirModal = () => {
         setModalLogin(true);
     }
 
+    /* Setea la constante anterior para cerrar el cuadrito emergente de iniciar sesión */
     const cerrarModal = () => {
         setModalLogin(false);
     }
 
+    /* Todo el codigo html que forma la estructura del componente */
     return (
         <div className="header">
             <div>
@@ -56,7 +58,6 @@ function Header({usuario, inicioSesion}) {
             </div>
         </div>
     );
-
 }
 
 export default Header;

@@ -62,7 +62,7 @@
     text-align: center; /* Alinea el texto al centro */
     display: block; /* Convierte el botón en un elemento de bloque para centrarlo */
     position: absolute;
-    bottom: -240px; /* Ajusta la posición vertical */
+    bottom: -310px; /* Ajusta la posición vertical */
     left: 50%; /* Centra horizontalmente */
     transform: translateX(-50%); /* Centra horizontalmente */
 
