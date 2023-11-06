@@ -27,11 +27,11 @@ function Login({inicioSesion}) {
      * y este enviarselo por medio de CrearService al back para iniciar sesión con este ususario */
     function iniciarSesion() {
         const sesionDTO = {
-            nombreUsuario: nombreUs,
+            usuario: nombreUs,
             contrasenia: contra
         }
         LoginService.login(sesionDTO).then(response => {
-            inicioSesion(response.data.response);
+            inicioSesion(response.data.response.token);
             console.log(response.data)
         }).catch(error => {
             console.log(error);

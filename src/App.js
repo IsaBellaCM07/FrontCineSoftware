@@ -1,4 +1,4 @@
-import React, {lazy, Suspense, useState} from 'react';
+import React, {lazy, Suspense, useEffect, useState} from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -16,30 +16,32 @@ const LazyCrearCuenta = lazy(() => import('./components/CrearCuenta'));
 
 function App() {
 
-    /* Esta funcion hace que cada vez que se inicie la pagina se borre el usuario
-     * que ya estaba en sesión */
-    window.onload = function () {
-        localStorage.setItem("user", JSON.stringify(null));
-    }
 
-    /* Este metodo guarda el usuario que inicio sesión en toda la aplicación para usarlo
-     * en los diferentes componentes que lo necesiten */
-    const iniciarUsuario = () => {
-        const usuarioInicial = JSON.parse(localStorage.getItem("user"));
-        if(usuarioInicial == null){
-            return null;
+    function inicializarToken() {
+        if(localStorage.getItem("user")){
+            return localStorage.getItem("user");
         }else{
-            return usuarioInicial;
+            return "";
         }
     }
 
-    /* Constan te que se modifica cada vez que alguien inicia sesión */
-    const [usuario, setUsuario] = useState(iniciarUsuario);
+    const [token, setToken] = useState(inicializarToken);
+
+    function convertirToken() {
+
+        if(token !== ""){
+
+            const aux = token.split('.');
+            const aux2 = atob(aux[1])
+            return aux2;
+        }
+        return "";
+    }
 
     /* Metodo que setea el usuario cada vez que inicia sesión */
     function inicioSesion(nuevoUsuario){
-        setUsuario(nuevoUsuario);
-        localStorage.setItem("user", JSON.stringify(nuevoUsuario));
+        setToken(nuevoUsuario);
+        localStorage.setItem("user", nuevoUsuario);
     }
 
     /* Este codigo html llama a los componentes que forman toda la app */
@@ -47,7 +49,7 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 {/* Renderiza el componente Header en la parte superior de la aplicación */}
-                <Header usuario={usuario} inicioSesion={inicioSesion}/>
+                <Header usuario={convertirToken()} inicioSesion={inicioSesion}/>
 
                 {/* Crea un contenedor para el contenido principal */}
                 <div className="container">
@@ -55,7 +57,7 @@ function App() {
                         {/* Define una ruta para pagina de inicio */}
                         <Route exact path="/" element={<PaginaInicio/>}/>
                         {/* Define una ruta para pagina de peliculas del admin */}
-                        <Route path="/cartelera" element={<PeliculasAdmin usuario={usuario}/>}/>
+                        <Route path="/cartelera" element={<PeliculasAdmin usuario={convertirToken()}/>}/>
                         {/* Define una ruta para agregar peliculas */}
                         <Route path="/aniadir-pelicula" element={<AgregarPelicula/>}/>
                         {/* Define una ruta para crear cuenta*/}

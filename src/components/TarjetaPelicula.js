@@ -105,43 +105,49 @@ function TarjetaPelicula(prop) {
                             {horario}
                         </li>
                     ))}
-                    <div className="horario-input">
-                        <input
-                            type="text"
-                            placeholder="Nuevo horario"
-                            value={nuevoHorario}
-                            onChange={(e) => setNuevoHorario(e.target.value)}
-                        />
-                        <button className="boton-agregar" onClick={agregarHorario}>
-                            <img
-                                className="img-boton"
-                                src="https://cdn-icons-png.flaticon.com/512/117/117885.png"
-                                alt="Agregar horario"
-                            />
-                        </button>
-                        <button className="boton-elim" onClick={eliminarHorario}>
-                            <img
-                                className="img-boton"
-                                src="https://cdn-icons-png.flaticon.com/512/1017/1017530.png"
-                                alt="Eliminar horario"
-                            />
-                        </button>
-                    </div>
+                    {usuario == "administrador" &&
+                            (<div className="horario-input">
+                                <input
+                                    type="text"
+                                    placeholder="Nuevo horario"
+                                    value={nuevoHorario}
+                                    onChange={(e) => setNuevoHorario(e.target.value)}
+                                />
+                                <button className="boton-agregar" onClick={agregarHorario}>
+                                    <img
+                                        className="img-boton"
+                                        src="https://cdn-icons-png.flaticon.com/512/117/117885.png"
+                                        alt="Agregar horario"
+                                    />
+                                </button>
+                                <button className="boton-elim" onClick={eliminarHorario}>
+                                    <img
+                                        className="img-boton"
+                                        src="https://cdn-icons-png.flaticon.com/512/1017/1017530.png"
+                                        alt="Eliminar horario"
+                                    />
+                                </button>
+                            </div>)
+                    }
                 </ul>
-                <button className="boton-eliminar" onClick={eliminarPeli}>
-                    <img
-                        src="https://cdn-icons-png.flaticon.com/512/1017/1017530.png"
-                        className="img-boton"
-                        alt="Eliminar película"
-                    />
-                </button>
-                <button className="boton-editar">
-                    <img
-                        src="https://cdn-icons-png.flaticon.com/512/32/32355.png"
-                        className="img-boton"
-                        alt="Editar película"
-                    />
-                </button>
+                {usuario == "administrador" &&
+                    (<div>
+                        <button className="boton-eliminar" onClick={eliminarPeli}>
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/1017/1017530.png"
+                                className="img-boton"
+                                alt="Eliminar película"
+                            />
+                        </button>
+                        <button className="boton-editar">
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/32/32355.png"
+                                className="img-boton"
+                                alt="Editar película"
+                            />
+                        </button>
+                    </div>)
+                }
             </article>
         </div>
     );

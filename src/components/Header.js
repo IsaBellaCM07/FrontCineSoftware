@@ -8,6 +8,8 @@ function Header({usuario, inicioSesion}) {
 
     /* Constante que usa useState para modificarse */
     const [modalLogin, setModalLogin] = useState(false);
+    const aux = usuario.split(',');
+    const nombreUs = () => usuario == "" ? [""] : aux[1].split('"');
 
     /* Setea la constante anterior para abrir el cuadrito emergente de iniciar sesión */
     const abrirModal = () => {
@@ -26,7 +28,8 @@ function Header({usuario, inicioSesion}) {
                 <header id="usuario">
                     <div className="user-links">
                         {
-                            usuario == null ? (
+                            usuario == "" ? (
+
                                 <div>
                                     <button onClick={modalLogin ? cerrarModal : abrirModal} className="btn-login">Iniciar Sesión</button>
                                     <a className="btn-login" href="/crear-cuenta">Crear cuenta</a>
@@ -34,7 +37,7 @@ function Header({usuario, inicioSesion}) {
                                 </div>
                             ) : (
                                 <div>
-                                    <button className="btn-login">Hola {usuario.nombreUsuario}</button>
+                                    <button className="btn-login">Hola {nombreUs()[3]}</button>
                                 </div>
                             )
                         }

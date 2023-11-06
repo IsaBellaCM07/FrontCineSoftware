@@ -12,6 +12,9 @@ export const PeliculasAdmin = ({usuario}) => {
      * y es utilizada para tener todas las peliculas que hay en la base de datos */
     const [peliculas, setPeliculas] = useState([]);
 
+    const aux = usuario.split(',');
+    const rolUs = () => usuario == "" ? [""] : aux[2].split('"')[3];
+
     /* Este es un metodo de tipo useEffect que sirve para que cada vez que hay un cambio de algun tipo
      * se modifique automaticamente en tiempo de ejecucion y sirve para listar las peliculas */
     useEffect(() => {
@@ -24,7 +27,6 @@ export const PeliculasAdmin = ({usuario}) => {
 
         PeliculaService.getAllPeliculas().then(responsee => {
             setPeliculas(responsee.data.response);
-            console.log(responsee.data.response)
         }).catch(error => {
             console.log(error);
         })
@@ -33,10 +35,13 @@ export const PeliculasAdmin = ({usuario}) => {
     /* Todo el codigo html que forma la estructura del componente */
     return (
         <div className="tarjetas">
-                <Link to="/aniadir-pelicula"><h3 className="aniadir">+</h3></Link>
+                {   rolUs() == "administrador" &&
+                    (<Link to="/aniadir-pelicula"><h3 className="aniadir">+</h3></Link>)
+                }
+
                 {
                     peliculas.map(pelicula =>
-                        <TarjetaPelicula movie = {pelicula} usuario={usuario}/>
+                        <TarjetaPelicula movie = {pelicula} usuario={rolUs()}/>
                     )
                 }
         </div>
