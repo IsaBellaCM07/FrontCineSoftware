@@ -2,7 +2,7 @@ import React from "react";
 import TarjetaCombo from "./TarjetaCombo";
 import "../styles/CuadriculaTarjetaStyle.css";
 
-function CuadriculaTarjeta() {
+function CuadriculaTarjeta(props) {
     const tarjetas = [
         {
             imagen: "https://assets.cinemark-core.com/5db771be04daec00076df3f5/vista/concessions/61575a34166e980008dedb3e/common/4460-1678814603535.jpg",
@@ -57,9 +57,19 @@ function CuadriculaTarjeta() {
                             nombre={tarjeta.nombre}
                             descripcion={tarjeta.descripcion}
                             precio={tarjeta.precio}
+                            token={props.token}
                         />
                     ))}
                 </div>
+                {props.token &&
+                    (<div>
+                        <button type="button" className="car-button">
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png"
+                            className="img-boton"
+                        />
+                        </button>
+                    </div>)}
             </div>
         </div>
     );

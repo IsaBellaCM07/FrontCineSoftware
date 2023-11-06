@@ -80,6 +80,10 @@ function TarjetaPelicula(prop) {
         }
     };
 
+    function aniadirCarrito(horario) {
+        return undefined;
+    }
+
     /* Todo el codigo html que forma la estructura del componente */
     return (
         <div className="container-tarjeta">
@@ -100,7 +104,8 @@ function TarjetaPelicula(prop) {
                             className={`horario-item ${
                                 horario === horarioSeleccionado ? "horario-seleccionado" : ""
                             }`}
-                            onClick={() => seleccionarHorario(horario)}
+                            onClick={() => usuario == "administrador" ? seleccionarHorario(horario)
+                                            : aniadirCarrito(horario)}
                         >
                             {horario}
                         </li>

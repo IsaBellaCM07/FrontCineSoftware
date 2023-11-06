@@ -18,7 +18,6 @@ const LazyCrearCuenta = lazy(() => import('./components/CrearCuenta'));
 
 function App() {
 
-
     function inicializarToken() {
         if(localStorage.getItem("user")){
             return localStorage.getItem("user");
@@ -32,7 +31,7 @@ function App() {
     function convertirToken() {
 
         if(token !== ""){
-
+            console.log(token)
             const aux = token.split('.');
             const aux2 = atob(aux[1])
             return aux2;
@@ -40,11 +39,6 @@ function App() {
         return "";
     }
 
-    function reiniciarToken(bandera){
-        if(bandera){
-            localStorage.clear();
-        }
-    }
 
     /* Metodo que setea el usuario cada vez que inicia sesión */
     function inicioSesion(nuevoUsuario){
@@ -57,7 +51,7 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 {/* Renderiza el componente Header en la parte superior de la aplicación */}
-                <Header usuario={convertirToken()} inicioSesion={inicioSesion} reiniciarToken={reiniciarToken}/>
+                <Header usuario={convertirToken()} inicioSesion={inicioSesion}/>
 
                 {/* Crea un contenedor para el contenido principal */}
                 <div className="container">
@@ -73,7 +67,7 @@ function App() {
                                element={<LazyCrearCuenta/>}
                         />
                         <Route path="/confiteria"
-                               element={<Confiteria/>}
+                               element={<Confiteria token={token}/>}
                         />
                     </Routes>
                 </div>

@@ -4,6 +4,8 @@ import '../styles/TarjetaCombo.css';
 function TarjetaCombo(props) {
     const [cantidad, setCantidad] = useState(0);
 
+    const token = props.token;
+    console.log(token)
     const restarCantidad = () => {
         if (cantidad > 0) {
             setCantidad(cantidad - 1);
@@ -26,23 +28,25 @@ function TarjetaCombo(props) {
             <div className="combo-precio">
                 {props.precio}
             </div>
-            <div className="combo-acciones">
-                <button
-                    type="button"
-                    className="combo-accion"
-                    onClick={restarCantidad}
-                >
-                    -
-                </button>
-                <span className="combo-cantidad">{cantidad}</span>
-                <button
-                    type="button"
-                    className="combo-accion"
-                    onClick={sumarCantidad}
-                >
-                    +
-                </button>
-            </div>
+            {token &&
+                (<div className="combo-acciones">
+                    <button
+                        type="button"
+                        className="combo-accion"
+                        onClick={restarCantidad}
+                    >
+                        -
+                    </button>
+                    <span className="combo-cantidad">{cantidad}</span>
+                    <button
+                        type="button"
+                        className="combo-accion"
+                        onClick={sumarCantidad}
+                    >
+                        +
+                    </button>
+                </div>)
+            }
         </div>
     );
 }

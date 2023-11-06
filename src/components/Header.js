@@ -4,7 +4,7 @@ import {Link, useLocation} from 'react-router-dom';
 import Login from "./Login"
 import '../styles/HeaderStyle.css';
 
-function Header({usuario, inicioSesion, reiniciarToken}) {
+function Header({usuario, inicioSesion}) {
 
     /* Constante que usa useState para modificarse */
     const [modalLogin, setModalLogin] = useState(false);
@@ -14,6 +14,11 @@ function Header({usuario, inicioSesion, reiniciarToken}) {
     /* Setea la constante anterior para abrir el cuadrito emergente de iniciar sesión */
     const abrirModal = () => {
         setModalLogin(true);
+    }
+
+    function reiniciarToken(){
+        localStorage.clear();
+        window.location.reload();
     }
 
     /* Setea la constante anterior para cerrar el cuadrito emergente de iniciar sesión */
@@ -38,7 +43,7 @@ function Header({usuario, inicioSesion, reiniciarToken}) {
                             ) : (
                                 <div>
                                     <button className="btn-login">Hola {nombreUs()[3]}</button>
-                                    <button className="btn-login" onClick={reiniciarToken(true)}>Cerrar Sesión</button>
+                                    <Link to="/" className="link"><button className="btn-login" onClick={reiniciarToken}>Cerrar Sesión</button></Link>
                                 </div>
                             )
                         }
@@ -52,7 +57,7 @@ function Header({usuario, inicioSesion, reiniciarToken}) {
                         <ul>
                             <li className="square-list-item"><a href="/cartelera"> CARTELERA</a></li>
                             <li className="square-list-item"><a>TEATROS</a></li>
-                            <li className="square-list-item"><a href = "/src/components/TarjetaCombo" >CONFITERÍA</a></li>
+                            <li className="square-list-item"><a href = "/confiteria">CONFITERÍA</a></li>
                             <li className="square-list-item"><a>PROMOCIONES</a></li>
                             <li className="square-list-item"><a>MEMBRESÍAS</a></li>
                         </ul>

@@ -13,7 +13,7 @@
 
 .container-amarillo {
     background-color: darkgoldenrod;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -49,6 +49,14 @@
 .combo-cantidad {
     font-size: 18px;
     margin: 0 10px;
+}
+
+.car-button {
+    background-color: crimson;
+    border-radius: 15px;
+    padding: 4px 9px;
+    border: none;
+    margin-top: 50px;
 }
 
 
