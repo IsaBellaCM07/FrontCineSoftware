@@ -51,7 +51,7 @@ function Header({usuario, inicioSesion}) {
                         <ul>
                             <li className="square-list-item"><a href="/cartelera"> CARTELERA</a></li>
                             <li className="square-list-item"><a>TEATROS</a></li>
-                            <li className="square-list-item"><a>CONFITERÍA</a></li>
+                            <li className="square-list-item"><a href = "/src/components/TarjetaCombo" >CONFITERÍA</a></li>
                             <li className="square-list-item"><a>PROMOCIONES</a></li>
                             <li className="square-list-item"><a>MEMBRESÍAS</a></li>
                         </ul>

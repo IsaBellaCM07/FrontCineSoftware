@@ -1,6 +1,5 @@
 // Login.js
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom'; // Importa Link para crear enlaces internos
 import '../styles/LoginStyle.css';
 import LoginService from "../services/LoginService";
 
