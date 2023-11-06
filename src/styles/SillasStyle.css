@@ -1,0 +1,53 @@
+/* Contenedor principal del componente */
+.seat-selection {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Encabezado del componente */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Pantalla del cine */
+.screen {
+    font-size: 18px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Contenedor de los asientos */
+.seating-plan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Fila de asientos */
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Asiento individual */
+.seat {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Estilo para asiento seleccionado */
+.seat.selected {
+    background-color: darkgray;
+    color: white;
+    border: 1px solid darkgray;
+}

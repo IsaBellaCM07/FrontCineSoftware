@@ -7,6 +7,7 @@ import PeliculasAdmin from "./components/PeliculasAdmin";
 import './App.css';
 import AgregarPelicula from "./components/AgregarPelicula";
 import Confiteria from "./components/CuadriculaTarjeta";
+import Sillas from "./components/Sillas";
 
 
 /*
@@ -68,6 +69,9 @@ function App() {
                         />
                         <Route path="/confiteria"
                                element={<Confiteria token={token}/>}
+                        />
+                        <Route path="/teatros"
+                               element={<Sillas/>}
                         />
                     </Routes>
                 </div>

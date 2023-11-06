@@ -56,7 +56,7 @@ function Header({usuario, inicioSesion}) {
                     <nav>
                         <ul>
                             <li className="square-list-item"><a href="/cartelera"> CARTELERA</a></li>
-                            <li className="square-list-item"><a>TEATROS</a></li>
+                            <li className="square-list-item"><a href = "/teatros">TEATROS</a></li>
                             <li className="square-list-item"><a href = "/confiteria">CONFITERÍA</a></li>
                             <li className="square-list-item"><a>PROMOCIONES</a></li>
                             <li className="square-list-item"><a>MEMBRESÍAS</a></li>
