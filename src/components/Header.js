@@ -4,7 +4,7 @@ import {Link, useLocation} from 'react-router-dom';
 import Login from "./Login"
 import '../styles/HeaderStyle.css';
 
-function Header({usuario, inicioSesion}) {
+function Header({usuario, inicioSesion, reiniciarToken}) {
 
     /* Constante que usa useState para modificarse */
     const [modalLogin, setModalLogin] = useState(false);
@@ -38,6 +38,7 @@ function Header({usuario, inicioSesion}) {
                             ) : (
                                 <div>
                                     <button className="btn-login">Hola {nombreUs()[3]}</button>
+                                    <button className="btn-login" onClick={reiniciarToken(true)}>Cerrar Sesión</button>
                                 </div>
                             )
                         }

@@ -40,6 +40,12 @@ function App() {
         return "";
     }
 
+    function reiniciarToken(bandera){
+        if(bandera){
+            localStorage.clear();
+        }
+    }
+
     /* Metodo que setea el usuario cada vez que inicia sesión */
     function inicioSesion(nuevoUsuario){
         setToken(nuevoUsuario);
@@ -51,7 +57,7 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 {/* Renderiza el componente Header en la parte superior de la aplicación */}
-                <Header usuario={convertirToken()} inicioSesion={inicioSesion}/>
+                <Header usuario={convertirToken()} inicioSesion={inicioSesion} reiniciarToken={reiniciarToken}/>
 
                 {/* Crea un contenedor para el contenido principal */}
                 <div className="container">
