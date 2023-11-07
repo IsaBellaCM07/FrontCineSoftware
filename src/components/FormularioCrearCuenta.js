@@ -130,7 +130,7 @@ function FormularioCrearCuenta(){
                         </div>
                     </div>
                 </div>
-                <button type="submit" className="formulario-submit" onClick={crearUsuario}>Crear cuenta</button>
+                <button type="button" className="formulario-submit" onClick={crearUsuario}>Crear cuenta</button>
             </form>
         </div>
     )

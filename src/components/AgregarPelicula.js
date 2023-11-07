@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/AgregarStyle.css";
 import PeliculaService from "../services/PeliculaService";
 
-function AgregarPelicula() {
+function AgregarPelicula({token}) {
 
     /* Todas las constantes que usan useState para irse modificando durante la ejecución del programa
      * y son utilizadas para crear la pelicula */
@@ -45,8 +45,7 @@ function AgregarPelicula() {
             link: link,
             listaHorarios: horarios.split(",").map((horario) => horario.trim()), // Convertir horarios a una lista
         };
-
-        PeliculaService.createPelicula(pelicula)
+        PeliculaService.createPelicula(pelicula, token)
             .then((response) => {
                 window.location.href = "/cartelera";
             })

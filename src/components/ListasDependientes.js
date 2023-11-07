@@ -4,10 +4,13 @@ import "../styles/ListasDependientesStyle.css";
 class ListasDependientes extends Component {
     constructor(props) {
         super(props);
+        const ciudadGuardada = localStorage.getItem("ciudad");
+        const teatroGuardado = localStorage.getItem("teatro");
         this.state = {
-            ciudad: 'defecto', // Valor predeterminado para el país
+            ciudad: ciudadGuardada || 'defecto',
+            teatro: teatroGuardado || ' ._. ',
             teatros: {
-                defecto: ['._.'],
+                defecto: [' ._. '],
                 bogota: ['Atlantis', 'Floresta', 'Altavista'],
                 medellin: ['Arkadia', 'El tesoro', 'Bosque Plaza'],
                 cali: ['Pacific Mall', 'Simon Bolivar', 'La Estacion'],
@@ -18,11 +21,25 @@ class ListasDependientes extends Component {
     }
 
     recargarLista = (event) => {
+
+        console.log(event.target.value)
+        if(event.target.value == 'defecto'){
+            localStorage.removeItem("ciudad");
+            localStorage.removeItem("teatro")
+        }else{
+            localStorage.setItem("ciudad", event.target.value);
+        }
         this.setState({ ciudad: event.target.value });
+        window.location.reload();
     };
 
+    recargarPagina = (e) => {
+        localStorage.setItem("teatro", e.target.value)
+        window.location.reload();
+    }
+
     render() {
-        const { ciudad, teatros} = this.state;
+        const { ciudad, teatro, teatros} = this.state;
 
         return (
             <div className="listas">
@@ -37,7 +54,7 @@ class ListasDependientes extends Component {
                 </select>
 
                 <label htmlFor="teatros" className="descrip">Seleccion un teatro:  </label>
-                <select id="teatros" name="teatro" className="combos">
+                <select id="teatros" name="teatro" className="combos" onChange={this.recargarPagina} value={teatro}>
                     {teatros[ciudad].map((teatro, index) => (
                         <option key={index} value={teatro}>
                             {teatro}

@@ -32,7 +32,6 @@ function App() {
     function convertirToken() {
 
         if(token !== ""){
-            console.log(token)
             const aux = token.split('.');
             const aux2 = atob(aux[1])
             return aux2;
@@ -62,7 +61,7 @@ function App() {
                         {/* Define una ruta para pagina de peliculas del admin */}
                         <Route path="/cartelera" element={<PeliculasAdmin usuario={convertirToken()}/>}/>
                         {/* Define una ruta para agregar peliculas */}
-                        <Route path="/aniadir-pelicula" element={<AgregarPelicula/>}/>
+                        <Route path="/aniadir-pelicula" element={<AgregarPelicula token={token}/>}/>
                         {/* Define una ruta para crear cuenta*/}
                         <Route path="/crear-cuenta"
                                element={<LazyCrearCuenta/>}
