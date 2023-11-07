@@ -1,16 +1,23 @@
-/* Contenedor principal del componente */
+/* Contenedor principal de la selección de asientos */
 .seat-selection {
     text-align: center;
     padding: 20px;
 }
 
-/* Encabezado del componente */
+/* Título del componente de selección de asientos */
+.title {
+    font-size: 24px;
+    color: darkslategray;
+    margin-bottom: 20px;
+}
+
+/* Encabezado del componente de selección de asientos */
 h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-/* Pantalla del cine */
+/* Estilo para la pantalla de cine */
 .screen {
     font-size: 18px;
     background-color: #333;
@@ -33,12 +40,12 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* Asiento individual */
+/* Asiento individual en el plano de asientos */
 .seat {
     width: 40px;
     height: 40px;
     margin: 5px;
-    border: 1px solid #ccc;
+    border: 2px solid darkgreen;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,7 +54,59 @@ h2 {
 
 /* Estilo para asiento seleccionado */
 .seat.selected {
-    background-color: darkgray;
+    background-color: lightgreen;
     color: white;
-    border: 1px solid darkgray;
+    border: 1px solid lightgreen;
 }
+
+/* Estilo para asientos ocupados */
+.room__seat--busy {
+    border: 3px solid darkred;
+    background-color: darkred;
+}
+
+/* Estilo para asientos disponibles */
+.room__seat--available {
+    border: 3px solid darkgreen;
+}
+
+/* Estilo para asientos seleccionados */
+.room__seat--selected {
+    border: 3px solid lightgreen;
+    background-color: lightgreen;
+}
+
+
+.information-room__cube {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.information-room__type-seat {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.continue-button {
+    background-color: lightcoral; /* Color de fondo */
+    color: #fff; /* Color de texto */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    border: none; /* Elimina el borde */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s; /* Transición de color de fondo al pasar el mouse */
+
+    margin: 40px;
+
+    /* Estilo al pasar el mouse sobre el botón */
+    &:hover {
+        background-color: darkred; /* Color de fondo al pasar el mouse */
+    }
+}
+
+
+

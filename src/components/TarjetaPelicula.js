@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import PeliculaService from "../services/PeliculaService";
 import Sillas from "./Sillas";
 
+
 function TarjetaPelicula(prop) {
 
     /* Constantes que se traen como parametros del componente */
@@ -15,6 +16,7 @@ function TarjetaPelicula(prop) {
     const [horarioSeleccionado, setHorarioSeleccionado] = useState(null);
     const [nuevoHorario, setNuevoHorario] = useState("");
     const [horarios, setHorarios] = useState(peli.listaHorarios);
+
 
     /* Metodo que deja setea un horario cuando se le da clic y queda seleccionado */
     const seleccionarHorario = (horario) => {
@@ -103,8 +105,15 @@ function TarjetaPelicula(prop) {
                             className={`horario-item ${
                                 horario === horarioSeleccionado ? "horario-seleccionado" : ""
                             }`}
-                            onClick={() => usuario == "administrador" ? seleccionarHorario(horario)
-                                            : usuario == "cliente" && (<Sillas movie={peli} horario={horario}/>)}
+                            onClick={() => {
+                                if (usuario === "administrador") {
+                                    seleccionarHorario(horario);
+                                } else if (usuario === "cliente") {
+                                    const peliculaNombre = encodeURIComponent(peli.nombre);
+                                    const horarioSeleccionado = encodeURIComponent(horario);
+                                    window.location.href = `/seleccionar-sillas/${peliculaNombre}/${horarioSeleccionado}`;
+                                }
+                            }}
                         >
                             {horario}
                         </li>

@@ -1,4 +1,4 @@
-import React, {lazy, Suspense, useEffect, useState} from 'react';
+import React, {lazy, useState} from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -70,14 +70,16 @@ function App() {
                         <Route path="/confiteria"
                                element={<Confiteria token={token}/>}
                         />
-                        <Route path="/teatros"
-                               element={<Sillas/>}
+                        <Route path="/seleccionar-sillas/:pelicula/:horario"
+                               element={<Sillas />}
                         />
+
+
                     </Routes>
                 </div>
 
-                {/* Renderiza el componente Footer en la parte inferior de la aplicación */}
                 <Footer/>
+
             </BrowserRouter>
         </div>
     );
