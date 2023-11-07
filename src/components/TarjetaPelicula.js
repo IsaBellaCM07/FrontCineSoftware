@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/TarjetaPeliculaStyle.css";
 import { Link } from "react-router-dom";
 import PeliculaService from "../services/PeliculaService";
+import Sillas from "./Sillas";
 
 function TarjetaPelicula(prop) {
 
@@ -80,9 +81,7 @@ function TarjetaPelicula(prop) {
         }
     };
 
-    function aniadirCarrito(horario) {
-        return undefined;
-    }
+
 
     /* Todo el codigo html que forma la estructura del componente */
     return (
@@ -105,7 +104,7 @@ function TarjetaPelicula(prop) {
                                 horario === horarioSeleccionado ? "horario-seleccionado" : ""
                             }`}
                             onClick={() => usuario == "administrador" ? seleccionarHorario(horario)
-                                            : aniadirCarrito(horario)}
+                                            : usuario == "cliente" && (<Sillas movie={peli} horario={horario}/>)}
                         >
                             {horario}
                         </li>

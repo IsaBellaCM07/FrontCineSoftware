@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;900&display=swap');
+
+.listas{
+    margin: 20px;
+}
+
+.combos{
+    margin: 0 20px;
+    color: darkred;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 15px;
+    border-color: black;
+    border-width: 1.5px;
+    border-style: solid;
+}
+
+.combos:hover{
+    background-color: lightgoldenrodyellow;
+    border-radius: 15px;
+}
+
+.descrip{
+    color: darkred;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}

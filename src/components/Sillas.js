@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/SillasStyle.css';
 
-function Sillas() {
+function Sillas(props) {
+    const peli = props.movie;
+    const horario = props.horario;
     const rows = ['A', 'B', 'C', 'D', 'E', 'F']; // Filas de asientos
     const seatsPerRow = 10; // Asientos por fila
     const [selectedSeats, setSelectedSeats] = useState([]); // Almacena los asientos seleccionados
@@ -18,6 +20,7 @@ function Sillas() {
 
     return (
         <div className="seat-selection">
+            <h1>{peli.nombre} a las {horario}</h1>
             <h2>Seleccione sus asientos</h2>
             <div className="screen">Pantalla</div>
             <div className="seating-plan">

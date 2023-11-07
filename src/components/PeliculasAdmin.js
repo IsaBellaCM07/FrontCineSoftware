@@ -3,6 +3,7 @@ import PeliculaService from "../services/PeliculaService";
 import TarjetaPelicula from "./TarjetaPelicula";
 import '../styles/PeliculasStyle.css';
 import {Link} from "react-router-dom";
+import ListasDependientes from "./ListasDependientes";
 
 
 
@@ -34,16 +35,21 @@ export const PeliculasAdmin = ({usuario}) => {
 
     /* Todo el codigo html que forma la estructura del componente */
     return (
-        <div className="tarjetas">
-                {   rolUs() == "administrador" &&
-                    (<Link to="/aniadir-pelicula"><h3 className="aniadir">+</h3></Link>)
-                }
 
-                {
-                    peliculas.map(pelicula =>
-                        <TarjetaPelicula movie = {pelicula} usuario={rolUs()}/>
-                    )
-                }
+
+        <div className="tarjetas">
+
+            <ListasDependientes/>
+
+            {   rolUs() == "administrador" &&
+                (<Link to="/aniadir-pelicula"><h3 className="aniadir">+</h3></Link>)
+            }
+
+            {
+                peliculas.map(pelicula =>
+                    <TarjetaPelicula movie = {pelicula} usuario={rolUs()}/>
+                )
+            }
         </div>
     );
 }
