@@ -46,9 +46,13 @@ export const PeliculasAdmin = ({usuario}) => {
             }
 
             {
-                peliculas.map(pelicula =>
-                    <TarjetaPelicula movie = {pelicula} usuario={rolUs()}/>
-                )
+                localStorage.getItem("ciudad") ? peliculas.sort(() => Math.random() - 0.5)
+                        .slice(0, Math.floor(Math.random() * peliculas.length) + 1)
+                        .map(pelicula =>
+                            <TarjetaPelicula movie = {pelicula} usuario={rolUs()}/>)
+                    : peliculas.map(pelicula =>
+                        <TarjetaPelicula movie = {pelicula} usuario={rolUs()}/>
+                    )
             }
         </div>
     );
